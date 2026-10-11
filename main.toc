@@ -1,0 +1,54 @@
+\contentsline {chapter}{\numberline {第零章\hspace {.3em}}数学基础}{1}{chapter.0}%
+\contentsline {part}{第一部分\hspace {1em}理论基础}{2}{part.1}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}重要实验及重要物理常数}{3}{chapter.1}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}波函数与薛定谔方程}{4}{chapter.2}%
+\contentsline {section}{\numberline {2.1}波函数}{4}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}波函数的统计解释}{4}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}态叠加原理}{5}{subsection.2.1.2}%
+\contentsline {section}{\numberline {2.2}概率流守恒定律}{5}{section.2.2}%
+\contentsline {section}{\numberline {2.3}定态薛定谔方程}{5}{section.2.3}%
+\contentsline {section}{\numberline {2.4}维里定理}{5}{section.2.4}%
+\contentsline {section}{\numberline {2.5}F-H定理}{6}{section.2.5}%
+\contentsline {section}{\numberline {2.6}附录}{6}{section.2.6}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}一维定态问题}{7}{chapter.3}%
+\contentsline {section}{\numberline {3.1}一维定态的性质}{7}{section.3.1}%
+\contentsline {section}{\numberline {3.2}方势阱}{7}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}一维无限深方势阱}{7}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}三维有限深方势阱}{8}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}一维有限深方势阱}{8}{subsection.3.2.3}%
+\contentsline {section}{\numberline {3.3}一维谐振子}{9}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}谐振子势}{9}{subsection.3.3.1}%
+\contentsline {section}{\numberline {3.4}一维散射问题}{9}{section.3.4}%
+\contentsline {section}{\numberline {3.5}附录}{9}{section.3.5}%
+\contentsline {subsection}{\numberline {3.5.1}一维无限深方势阱推导 }{9}{subsection.3.5.1}%
+\contentsline {subsection}{\numberline {3.5.2}一维谐振子势推导 }{11}{subsection.3.5.2}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}量子力学中的力学量}{12}{chapter.4}%
+\contentsline {section}{\numberline {4.1}线性代数}{12}{section.4.1}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}态和力学量的表象}{13}{chapter.5}%
+\contentsline {section}{\numberline {5.1}态的表象}{13}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}各表象能量本征方程}{13}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.2}力学量算符的矩阵表示}{14}{section.5.2}%
+\contentsline {section}{\numberline {5.3}矩阵力学}{14}{section.5.3}%
+\contentsline {section}{\numberline {5.4}幺正变换}{14}{section.5.4}%
+\contentsline {section}{\numberline {5.5}Dirac符号}{14}{section.5.5}%
+\contentsline {section}{\numberline {5.6}线性谐振子及占有数表象}{14}{section.5.6}%
+\contentsline {section}{\numberline {5.7}附录}{15}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}动量表象能量本征方程推导}{15}{subsection.5.7.1}%
+\contentsline {chapter}{\numberline {第六章\hspace {.3em}}中心力场}{17}{chapter.6}%
+\contentsline {section}{\numberline {6.1}中心力场的一般理论}{17}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}中心力场的定态薛定谔方程}{17}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}中心力场的定态波函数}{17}{subsection.6.1.2}%
+\contentsline {section}{\numberline {6.2}轨道角动量的本征值和本征函数}{18}{section.6.2}%
+\contentsline {section}{\numberline {6.3}球方势阱的基本性质}{18}{section.6.3}%
+\contentsline {section}{\numberline {6.4}氢原子的本征值和本征函数}{18}{section.6.4}%
+\contentsline {chapter}{\numberline {第七章\hspace {.3em}}微扰论}{19}{chapter.7}%
+\contentsline {section}{\numberline {7.1}不含时(定态)非简并微扰}{19}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}定态非简并能量近似}{19}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}定态非简并态矢近似}{20}{subsection.7.1.2}%
+\contentsline {section}{\numberline {7.2}不含时(定态)简并微扰}{20}{section.7.2}%
+\contentsline {section}{\numberline {7.3}含时微扰论}{20}{section.7.3}%
+\contentsline {section}{\numberline {7.4}量子跃迁几率}{20}{section.7.4}%
+\contentsline {section}{\numberline {7.5}光吸收与辐射的半经典理论}{20}{section.7.5}%
+\contentsline {section}{\numberline {7.6}选择定则}{20}{section.7.6}%
+\contentsline {chapter}{\numberline {第八章\hspace {.3em}}自旋与全同粒子}{21}{chapter.8}%
+\contentsline {section}{\numberline {8.1}薛定谔方程}{21}{section.8.1}%

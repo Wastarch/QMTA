@@ -1,0 +1,85 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+% \input{../config/cover}
+\else
+\fi
+
+\chapter{微扰论}
+\begin{examct}{}{}
+    非简并态微扰论、简并态微扰论、含时微扰论、量子跃迁几率、光吸收与辐射的半经典理论、选择定则
+\end{examct}
+\begin{examrqm}{}{}
+    \begin{enumerate}
+        \item 掌握非简并态微扰论中二阶微扰论计算方法，掌握简并态微扰论计算方法，会计算含时微扰论问题、量子跃迁几率，了解光吸收与辐射的半经典理论，掌握选择定则
+        \item 能综合运用所学知识解决实际问题
+    \end{enumerate}
+\end{examrqm}
+
+\section{不含时(定态)非简并微扰}
+
+哈密顿量:
+\begin{equation}
+    \hat{H} = \hat{H}_0+\hat{H}^{\prime}
+\end{equation}
+其中 $\hat{H}_0$ 为零级哈密顿量, $\hat{H}^{\prime}$ 为哈密顿量微扰.
+
+零级近似能量,态矢由零级定态薛定谔方程给出:
+\begin{equation}
+    \hat{H}_0\ket{\psi_n^{(0)}}=E_n^{(0)}\ket{\psi_n^{(0)}}
+\end{equation}
+\subsection{定态非简并能量近似}
+定态非简并能量近似为
+\begin{equation}
+    E_n = E_n^{(0)}+E_n^{(1)}+E_n^{(2)}+\cdots 
+\end{equation}
+
+\begin{enumerate}
+    \item 定态非简并能量一级修正 $E_n^{(1)}$：
+    \begin{equation}
+        \begin{aligned}
+            E_n^{(1)} &= \hat{H}_{nn}^{\prime} = \bra{\psi_n^{(0)}}{\hat{H}^{\prime}}\ket{\psi_n^{(0)}} \\[5pt]
+            &= \int_{-\infty}^{+\infty} \psi_{n}^{\ast (0)}\hat{H}^{\prime}\psi_{n}^{(0)}\mathrm{d}\tau
+        \end{aligned}
+    \end{equation}
+
+    \item 定态非简并能量二级修正 $E_n^{(2)}$：
+    \begin{equation}
+            E_n^{(2)}=\sum_{m\neq n}\frac{ \left\lvert \hat{H}_{mn}^{\prime} \right\rvert^2 }{E_n^{(0)}-E_m^{(0)}}
+    \end{equation}
+其中 $\hat{H}_{mn}^{\prime}$ 为:
+    \begin{equation}
+        \hat{H}_{mn}^{\prime} = \bra{\psi_m^{(0)}}\hat{H}^{\prime}\ket{\psi_n^{(0)}} 
+    \end{equation}
+    \item 定态非简并能量三级修正 $E_n^{(3)}$：
+    \begin{equation}
+            E_n^{(3)}=\sum_{m,m^{\prime}\neq n}\frac{\hat{H}_{nm}^{\prime}\hat{H}_{mm^{\prime}}^{\prime}\hat{H}_{m^{\prime}n}^{\prime}}{\left(E_n^{(0)}-E_m^{(0)}\right)\left(E_n^{(0)}-E_{m^{\prime}}^{(0)}\right)}-\sum_{m\neq n}\frac{\hat{H}_{nn}^{\prime} \left\lvert \hat{H}_{mn}^{\prime} \right\rvert^2 }{\left(E_n^{(0)}-E_m^{(0)}\right)^2}
+    \end{equation}
+其中 $\hat{H}_{mn}^{\prime}$ 等同上.
+
+\end{enumerate}
+
+\subsection{定态非简并态矢近似}
+定态非简并态矢近似为
+\begin{equation}
+    \psi_n = \psi_n^{(0)}+\psi_n^{(1)}+\cdots
+\end{equation}
+
+定态非简并态矢一级修正 $\psi_n^{(1)}$：
+\begin{equation}
+    \psi_n^{(1)}=\sum_{m\neq n}\frac{\hat{H}_{mn}^{\prime}}{E_n^{(0)}-E_m^{(0)}}\psi_m^{(0)}
+\end{equation}
+
+
+\section{不含时(定态)简并微扰}
+\section{含时微扰论}
+\section{量子跃迁几率}
+\section{光吸收与辐射的半经典理论}
+\section{选择定则}
+
+
+\ifx\allfiles\undefined
+\end{document}
+\fi

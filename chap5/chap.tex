@@ -1,0 +1,123 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+% \input{../config/cover}
+\else
+\fi
+
+\chapter{态和力学量的表象}
+\begin{examct}{}{}
+    态的表象、力学量算符的矩阵表示、矩阵力学、幺正变换、Dirac符号、线性谐振子及占有数表象
+\end{examct}
+\begin{examrqm}{}{}
+    \begin{enumerate}
+        \item 掌握表象变换、幺正变换、Dirac符号，会求力学量算符的本征值和本征态，掌握线性谐振子的代数解法
+        \item 能综合运用矩阵力学的基本知识解决问题
+    \end{enumerate}
+\end{examrqm}
+
+\section{态的表象}
+
+\subsection{各表象能量本征方程}
+\begin{enumerate}
+    \item 坐标表象：
+    \begin{equation}
+        \left[-\frac{\hbar^2}{2m}\frac{\mathrm{d}^2}{\mathrm{d}x^2}+V(x)\right]\psi(x)=E\psi(x)
+    \end{equation}
+
+    \item 动量表象：
+    \begin{equation}
+        \begin{matrix}
+            & \displaystyle -\frac{p^2}{2m}\varphi(p)+\int V_{pp^{\prime}}\varphi(p^{\prime})\mathrm{d}p^{\prime}=E\varphi(p) \\[10pt]
+            & \displaystyle V_{pp^{\prime}}=\frac{1}{2\pi\hbar}\int V(x)e^{\mathrm{i}(p^{\prime}-p)x/\hbar}\mathrm{d}x
+        \end{matrix}\label{eq:EnergyEigenequationinMomentumRepresentation}
+    \end{equation}
+\end{enumerate}
+
+
+
+
+
+
+
+
+\section{力学量算符的矩阵表示}
+\section{矩阵力学}
+\section{幺正变换}
+\section{Dirac符号}
+\section{线性谐振子及占有数表象}
+
+ 
+
+
+\newpage
+\section{附录}
+\subsection{动量表象能量本征方程推导}
+推导式\eqref{eq:EnergyEigenequationinMomentumRepresentation}.由不进入表象的态矢量的能量本征方程出发
+\begin{equation}
+    \hat{H}\ket{\psi}=(\hat{T}+V)\ket{\psi}=E\ket{\psi}
+\end{equation}
+等式两边分别插入恒等算符
+\begin{equation}
+    \int\ket{p^{\prime}}\bra{p^{\prime}}\mathrm{d}p^{\prime} = 1 
+\end{equation}
+得到
+\begin{equation}
+    \int(\hat{T}+V)\ket{p^{\prime}}\langle p^{\prime}|\psi \rangle\mathrm{d}p^{\prime}=E\int\ket{p^{\prime}}\langle p^{\prime}|\psi \rangle\mathrm{d}p^{\prime}
+\end{equation}
+又$\varphi(p^{\prime})=\langle p^{\prime}|\psi \rangle$ 得
+\begin{equation}
+    \int(\hat{T}+V)\ket{p^{\prime}}\varphi(p^{\prime})\mathrm{d}p^{\prime}=E\int\ket{p^{\prime}}\varphi(p^{\prime})\mathrm{d}p^{\prime}
+\end{equation}
+两边同时左乘 $\bra{p}$ 得
+\begin{equation}
+    \int \bra{p}(\hat{T}+V)\ket{p^{\prime}}\varphi(p^{\prime})\mathrm{d}p^{\prime}=E\int \langle p|p^{\prime} \rangle \varphi(p^{\prime})\mathrm{d}p^{\prime}
+\end{equation}
+\begin{equation}
+    \int \bra{p}\hat{T}\ket{p^{\prime}}\varphi(p^{\prime})\mathrm{d}p^{\prime} +\int \bra{p}V\ket{p^{\prime}}\varphi(p^{\prime})\mathrm{d}p^{\prime}=E\int \langle p|p^{\prime} \rangle \varphi(p^{\prime})\mathrm{d}p^{\prime}
+\end{equation}
+有克罗内克符号$\delta_{pp^{\prime}}=\langle p|p^{\prime} \rangle$ ,$\hat{T}$的本征方程 $\hat{T}\ket{p^{\prime}}=\frac{p^2}{2m}\ket{p^{\prime}}$
+
+\begin{equation}
+    \int \frac{p^2}{2m} \delta_{pp^{\prime}} \varphi(p^{\prime}) \mathrm{d}p^{\prime} + \int V_{pp^{\prime}} \varphi(p^{\prime})\mathrm{d}p^{\prime} = E \int \delta_{pp^{\prime}} \varphi(p^{\prime})\mathrm{d}p^{\prime}
+\end{equation}
+由$\delta$函数的挑选性 $\int \delta_{pp^{\prime}} \varphi(p^{\prime})\mathrm{d}p^{\prime} = \varphi(p)$ 得
+
+\begin{equation}
+    \boxed{
+    \frac{p^2}{2m}\varphi(p) + \int V_{pp^{\prime}} \varphi(p^{\prime})\mathrm{d}p^{\prime} = E \varphi(p)
+    }
+\end{equation} 
+该式即为动量表象的能量本征方程.
+
+其中 $V_{pp^{\prime}}$ 
+\begin{equation}
+        V_{pp^{\prime}} = \bra{p}V\ket{p^{\prime}}
+\end{equation}
+插入恒等算符
+\begin{equation}
+    \int\ket{x}\bra{x}\mathrm{d}x = 1 
+\end{equation}
+得到
+\begin{equation}
+    \begin{aligned}
+        V_{pp^{\prime}}  =& \bra{p}V\ket{p^{\prime}} \\[5pt]
+        =& \iint \langle p|x \rangle \bra{x} V \ket{x^{\prime}} \langle x^{\prime}|p^{\prime}\rangle \mathrm{d}x\mathrm{d}x^{\prime}\\[5pt]
+        =& \iint \frac{1}{\sqrt{2\pi\hbar}}e^{-\mathrm{i}p^{\prime}x/\hbar} \ V(x^{\prime})\langle x|x^{\prime}\rangle \ \frac{1}{\sqrt{2\pi\hbar}}e^{\mathrm{i}px/\hbar}\ \mathrm{d}x\mathrm{d}x^{\prime}\\[5pt]
+        =& \frac{1}{2\pi\hbar} \iint e^{-\mathrm{i}p^{\prime}x/\hbar} V(x^{\prime}) \delta_{xx^{\prime}}\ e^{\mathrm{i}px/\hbar} \ \mathrm{d}x\mathrm{d}x^{\prime}\\[5pt]
+        =& \frac{1}{2\pi\hbar} \int e^{-\mathrm{i}p^{\prime}x/\hbar} V(x) \ e^{\mathrm{i}px/\hbar} \ \mathrm{d}x \\[5pt]
+        =& \frac{1}{2\pi\hbar} \int V(x) e^{-\mathrm{i}(p^{\prime}-p)x/\hbar}\ \mathrm{d}x \\
+    \end{aligned}
+\end{equation}
+所以
+\begin{equation}
+    \boxed{
+        V_{pp^{\prime}}= \frac{1}{2\pi\hbar} \int V(x) e^{-\mathrm{i}(p^{\prime}-p)x/\hbar}\ \mathrm{d}x
+    }
+\end{equation}
+
+\ifx\allfiles\undefined
+\end{document}
+\fi

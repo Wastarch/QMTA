@@ -1,0 +1,53 @@
+\input{\path/cover_text.tex}
+
+%%%%%%%% 前言页 %%%%%%%%
+
+\newpage
+\thispagestyle{empty}
+\begin{center}
+    \Huge\textbf{\myForeword}
+\end{center}
+\myForewordText
+\begin{flushright}
+    \begin{tabular}{c}
+        \myDateForeword
+    \end{tabular}
+\end{flushright}
+
+% 目录页
+\newpage
+\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{Roman}
+\tableofcontents
+
+% 正文页
+\newpage
+\pagenumbering{arabic}
+\setcounter{chapter}{-1}
+\setcounter{page}{1}
+
+\pagestyle{fancy}
+% \fancyhead[L]{量子力学笔记}
+% \fancyhead[C]{中间页眉}
+% \fancyhead[R]{右侧页眉}
+% \fancyfoot[C]{\thepage}
+\fancyhf{}
+% 设置页眉
+\fancyhead[L]{\leftmark}    % 左侧：文章标题（\leftmark 通常是章标题）
+\fancyhead[C]{ }                       % 中间：留空（或自定义内容）
+\fancyhead[R]{\rightmark}   % 右侧：节标题（\rightmark 通常是节标题）
+
+
+% 设置页脚（示例：中间显示页码）
+\fancyfoot[C]{\thepage}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+
+
+
+
+

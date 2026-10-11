@@ -1,0 +1,87 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+% \input{../config/cover}
+\else
+\fi
+
+\chapter{波函数与薛定谔方程}
+\begin{examct}{}{}
+    波函数及其统计解释、薛定谔方程、态叠加原理、几率守恒定律、定态薛定谔方程
+\end{examct}
+\begin{examrqm}{}{}
+    \begin{enumerate}
+        \item 掌握波函数及统计解释、薛定谔方程、态叠加原理、几率守恒定律 
+        \item 会灵活运用所学知识解决实际问题
+    \end{enumerate}
+\end{examrqm}
+
+
+\section{波函数}
+
+量子力学中求解问题的基本方法是求解\textbf{薛定谔(Schrödinger)方程},得到粒子的波函数 $\Psi(\mathbf{r},t)$ 。
+\begin{equation}
+    \boxed{\mathrm{i}\hbar\frac{\partial\Psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\Psi + V(\mathbf{r},t)\Psi}
+\end{equation}
+描述微观粒子波动性的方程, 其中 $\hbar$ 是约化普朗克(Planck)常数, $m$ 是质量, $\nabla^2$ 是 Laplace 算子, $V(\mathbf{r},t)$ 是势函数。
+\begin{equation}
+    \hbar=\frac{h}{2\pi}=1.054\ 572\times 10^{-34}\,\mathrm{J}\cdot\mathrm{s}
+\end{equation}
+薛定谔方程的作用和地位从逻辑上将相当于牛顿第二定律,即给定适当的初始条件(一般来说, $\Psi(\mathbf{r},0)$ ),通过薛定谔方程确定以后所有时刻的波函数 $\Psi(\mathbf{r},t)$ 。
+\subsection{波函数的统计解释}
+关于波函数的物理意义,以波尔为首的哥本哈根学派认为“波函数”表征“概率波”，即波函数的模平方 $\left|\Psi(\mathbf{r},t)\right|^2$ 表示在任意时刻 $t$ 时刻粒子在空间 $\mathbf{r}$ 处的单位体积中出现的概率。
+\begin{equation}
+    \int_{V}\left|\Psi(\mathbf{r},t)\right|^2\mathrm{d}\mathbf{r} = \{\text{在}t\text{时刻发现粒子处于空间}r\text{处的单位体积中出现的概率}\}
+\end{equation}
+所以,波函数的统计解释是“概率分布”或“概率密度”。波函数满足
+\begin{equation}
+    \int_{\infty}\left|\Psi(\mathbf{r},t)\right|^2\mathrm{d}\mathbf{r} = 1
+\end{equation}
+
+\subsection{态叠加原理}
+
+\section{概率流守恒定律}
+
+\section{定态薛定谔方程}
+考虑 $\hat{H}$ 不依赖于时间的情况, 即
+\begin{equation}
+    i\hbar\frac{\partial}{\partial t}\Psi(x,t)=\hat{H}\Psi(x,t) = \left[-\frac{\hat{p}^2}{2m}+\hat{V}(x)\right]\Psi(x,t)
+\end{equation}
+这就是定态薛定谔方程。采用分离变量法。令
+\begin{equation}
+    \Psi(x,t)=\psi(x)T(t)
+\end{equation}
+代入得
+\begin{equation}
+    \boxed{T(t)=e^{-iEt/\hbar}}
+\end{equation}
+称为\textbf{时间演化因子}。
+\begin{equation}
+    \boxed{\hat{H}\psi(x,t)=E\psi(x)}\label{eq:TISE}
+\end{equation}
+该式为 $\hat{x}$ 表象下的能量本征方程。解为能量本征态，即\textbf{“定态”}。\eqref{eq:TISE} 即为\textbf{定态薛定谔方程}。
+所以有波函数为
+\begin{equation}
+    \Psi(x,t)=A\psi(x)e^{-iEt/\hbar}
+\end{equation}
+其中 $A$ 为归一化因子。
+
+\section{维里定理}
+（the virial theorem）
+
+定态下满足,两倍的动能期望值等于位矢量与势能梯度点积的期望值
+\begin{equation}
+    2\left\langle \hat{T} \right\rangle = \left\langle \vec{r}\cdot \nabla V(\vec{r}) \right\rangle
+\end{equation}
+
+\section{F-H定理}
+（Feynman-Hellmaon Theorem）
+\begin{equation}
+    \bra{\psi_n}\frac{\partial }{\partial \lambda}\hat{H}\ket{\psi_n}=\frac{\partial }{\partial \lambda}E_n
+\end{equation}
+\section{附录}
+\ifx\allfiles\undefined
+\end{document}
+\fi

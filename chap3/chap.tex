@@ -1,0 +1,234 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+% \input{../config/cover}
+\else
+\fi
+
+\chapter{一维定态问题}
+\begin{examct}{}{}
+    一维定态的性质、方势阱、一维谐振子、一维散射问题
+\end{examct}
+\begin{examrqm}{}{}
+    \begin{enumerate}
+        \item 掌握一维定态的基本性质、方势阱与一维谐振子的本征值与本征态，了解一维散射问题
+        \item 会灵活运用所学知识解决一维定态问题
+    \end{enumerate}
+\end{examrqm}
+
+\section{一维定态的性质}
+\section{方势阱}
+\subsection{一维无限深方势阱}
+势 $\displaystyle V(x)=\begin{cases}0,&0\leqslant x \leqslant a \\ \infty ,&x<0, x>a \end{cases}$ 
+\hfill
+\adjustbox{valign=m}{
+    \begin{tikzpicture}[>=stealth, % 
+                    line width=0.7pt] % 设置线条宽度
+    \draw[->] (-2,0) -- (4,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,4) node[above] {$V(x)$};
+
+    \node at (-0.3,-0.3) {$O$};
+
+    \draw (0,3) -- (-1.5,3);
+    \node at (-1,3.3) {$\infty$};
+
+    \draw (0,0) -- (2,0); % 势阱内部 (0 < x < a)，V=0
+    \draw (2,0) -- (2,3) -- (4,3); % 右侧势垒 (x > a)，V=∞
+    \node at (2,-0.3) {$a$}; 
+    \node at (3,3.3) {$\infty$};
+
+    \draw (0,0) -- (0,3);
+
+    \node[below] at (1,0) {$V=0$};
+\end{tikzpicture}
+}
+
+当 $x<0, x>a$ 时, $V(x)=\infty$,$\psi(x)=0$.
+
+当 $0\leqslant x \leqslant a$ 时,$V(x)=0$,有
+\begin{equation}
+    -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi(x)=E\psi(x)
+\end{equation}
+波函数为
+\begin{equation}
+    \psi_n(x)=\sqrt{\frac{2}{a}}\sin(\frac{n\pi x}{a}),\quad n=1,2,3,\cdots
+\end{equation}
+能量为
+\begin{equation}
+    E_n=\frac{n^2\pi^2\hbar^2}{2ma^2},\quad n=1,2,3,\cdots
+\end{equation}
+
+详细推导见\ref{chap:1DInfiniteSquarePotentialWell}
+
+一维无限深方势阱性质：
+\begin{enumerate}
+    \item 能量本征函数时分立的，且正交归一。$\displaystyle \braket{\psi_n}{\psi_m}=$
+\end{enumerate}
+
+\subsection{三维有限深方势阱}
+势 $\displaystyle V(x)=\begin{cases}
+    0,&0<x<a,0<y<a,0<z<a\\
+    \infty,&other
+\end{cases}$
+
+
+
+\subsection{一维有限深方势阱}
+势 $\displaystyle V(x)=\begin{cases}
+    0,&-a<x<a\\
+    V_0,&|x|>a
+\end{cases}$
+\hfill
+\adjustbox{valign=m}{  % valign=m 使图片中线与基线对齐
+    \begin{tikzpicture}
+        \draw[->] (-3,0) -- (3,0) node[right] {$x$};
+        \draw[->] (0,-0.5) -- (0,4) node[above] {$V(x)$};
+        \node at (-0.3,-0.3) {$O$};
+        \draw (-1,0) -- (-1,3) -- (-3,3);
+        \node at (-1,-0.3) {$-a$};
+        \node at (-3,3.3) {$V_0$};
+
+        \draw (1,0) -- (1,3) -- (3,3);
+        \node at (1,-0.3) {$a$};
+        \node at (3,3.3) {$V_0$};
+    \end{tikzpicture}
+}
+
+\begin{tikzpicture}[>=stealth,scale=1.5]
+    \draw[->] (-2,0) -- (2,0) node[right] {$x$};
+    \draw[->] (0,-0.3) -- (0,4) node[above] {$V(x)$};
+
+    \node at (-0.3,-0.3) {$O$};
+
+    \draw[thick, domain=-3:3, samples=300] plot (\x, {exp(-(\x)^2/(2*0.11^2))/(0.11*sqrt(2*pi))});
+
+    \node at (0.5, 3) {$\delta(x)$};
+
+\end{tikzpicture}
+
+
+\section{一维谐振子}
+\subsection{谐振子势}
+$\displaystyle V(x)=\frac{1}{2}m\omega^2x^2$
+\hfill
+\adjustbox{valign=m}{
+    \begin{tikzpicture}[>=stealth, % 
+                    line width=0.7pt] % 设置线条宽度
+    \draw[->] (-2.5,0) -- (2.5,0) node[right] {$x$};
+    \draw[->] (0,-0.5) -- (0,3) node[above] {$V(x)$};
+    \node at (-0.3,-0.3) {$O$};
+
+    \draw[thick, domain=-2:2, samples=300] plot (\x, {0.5*(\x)^2});
+
+\end{tikzpicture}
+}
+
+能量为：
+\begin{equation}
+    E_n=(n+\frac{1}{2})\hbar\omega \quad n=1,2,3,\cdots
+\end{equation}
+
+波函数为
+\begin{equation}
+    \psi_n(x)=N_ne^{-\alpha^2x^2/2}H_n(\alpha x)
+\end{equation}
+其中$\displaystyle \alpha=\sqrt{\frac{m\omega}{\hbar}}$\ ,\ $\displaystyle N_n=\sqrt{\frac{\alpha}{\pi^{\frac{1}{2}}2^n n!}}$为归一化系数，$H_n(\alpha x)$为 Hermite 多项式。
+
+基态波函数为
+\begin{equation}
+    \psi_0(x)=N_0e^{-\alpha^2x^2/2}
+\end{equation}
+
+详细推导见\ref{chap:1DHarmonicOscillator}
+
+
+
+
+
+
+
+\section{一维散射问题}
+\section{附录}
+\subsection{一维无限深方势阱推导 \label{chap:1DInfiniteSquarePotentialWell}}
+一维无限深方势阱势函数为
+\begin{equation}
+    V(x)=\begin{cases}
+            0,&0\leqslant x \leqslant a \\ 
+            \infty ,&x<0, x>a 
+        \end{cases}
+\end{equation} 
+
+当 $x<0, x>a$ 时, $V(x)=\infty$,$\psi(x)=0$.
+
+当 $0\leqslant x \leqslant a$ 时,$V(x)=0$,有
+\begin{equation}
+    -\frac{\hbar^2}{2m}\frac{d^2}{dx^2}\psi(x)=E\psi(x)
+\end{equation}
+令 $\displaystyle k=\sqrt{\frac{2mE}{\hbar^2}}$ 整理得 
+\begin{equation}
+    \frac{d^2}{dx^2}\psi(x) = -\frac{2mE}{\hbar^2}\psi(x) = -k^2\psi(x)
+\end{equation}
+解得
+\begin{equation}
+    \psi(x)=Ae^{ikx}+Be^{-ikx}
+\end{equation}
+又该势为驻波解，可写为三角形式
+\begin{equation}
+    \psi(x)=A\sin(kx)+B\cos(kx)
+\end{equation}
+代入边界条件$\begin{cases} \psi(0)=0\\ \psi(a)=0 \end{cases}$ 得
+\begin{equation}
+    \begin{cases}
+        B = 0 \\
+        A\sin(ka)=0
+    \end{cases}
+\end{equation}
+对于 $A\sin(ka)=0$ ,当 $A=0$ 时，$\psi(x)=0$，无法归一化。所以
+\begin{equation}
+    \sin(ka)=0 \quad \Rightarrow \quad k=\frac{n\pi}{a} \quad n=1,2,3,\cdots
+\end{equation}
+所以
+\begin{equation}
+    \psi_n(x) = A \sin\left(\frac{n\pi x}{a}\right)
+\end{equation}
+又 $\displaystyle k=\frac{n\pi}{a} = \sqrt{\frac{2mE}{\hbar^2}}$ 得到
+\begin{equation}
+    \boxed{E_n=\frac{n^2\pi^2\hbar^2}{2ma^2} \quad n=1,2,3,\cdots}
+\end{equation}
+归一化
+\begin{equation}
+    \begin{aligned}
+        1 &=\int_{-\infty}^{+\infty}\left| \psi_n(x) \right|^2 dx  \\
+        &=\int_{0}^a \psi_n^*(x)\psi_n(x) dx  \\
+        &= \left|A\right|^2 \int_{0}^a \sin^2\left(\frac{n\pi x}{a}\right) dx\\
+        &= \left|A\right|^2 \int_{0}^a \frac{1}{2}\left(1-\cos(\frac{2n\pi x}{a})\right) dx\\
+        &= \left|A\right|^2 \left( \frac{a}{2} - \int_{0}^a\cos(\frac{2n\pi x}{a}) dx\right)\\
+        &= \frac{a}{2}\left|A\right|^2
+    \end{aligned}
+\end{equation}
+得 
+\begin{equation}
+    A = \sqrt{\frac{2}{a}}
+\end{equation}
+所以定态波函数为
+\begin{equation}
+    \boxed{\Psi(x,t) = \sqrt{\frac{2}{a}} \sin\left(\frac{n\pi x}{a}\right) e^{-iE_nt/\hbar}}
+\end{equation}
+
+
+\subsection{一维谐振子势推导 \label{chap:1DHarmonicOscillator}}
+一维谐振子势为：
+\begin{equation}
+    V(x)=\frac{1}{2}m\omega^2x^2
+\end{equation}
+
+由于 $ V_{\pm\infty} = \infty $ , $ E<V_{\pm\infty}$ ,所以只存在束缚态。
+
+
+
+
+\ifx\allfiles\undefined
+\end{document}
+\fi
