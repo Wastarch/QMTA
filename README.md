@@ -1,122 +1,89 @@
-# [一个LaTeX的数学笔记模板](https://zhuanlan.zhihu.com/p/604236564)
+# 量子力学：理论与应用
 
-## 使用
+> Quantum Mechanics: Theory and Application
 
-### `main.tex` 主文件
+《量子力学：理论与应用》讲义的 LaTeX 源代码，基于 [一个LaTeX的数学笔记模板](https://zhuanlan.zhihu.com/p/604236564) 编写。
 
-```latex
-\def\allfiles{}
-\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
-\def\path{./config}
-\input{config/_config}
-\begin{document}
-\include{config/cover}
 
-\include{chap0/chap}
-% \include{chap1/chap}
-% \include{chap2/chap}
-% ...通过上述方式引入对应章节
+## 章节结构
 
-\end{document}
+| 文件夹 | 章节 | 内容 |
+| --- | --- | --- |
+| `chap0` | 第零章 | 数学基础 |
+| `chap1` | 第一章 | 重要实验及重要物理常数 |
+| `chap2` | 第二章 | 波函数与薛定谔方程 |
+| `chap3` | 第三章 | 一维定态问题 |
+| `chap4` | 第四章 | 量子力学中的力学量 |
+| `chap5` | 第五章 | 态和力学量的表象 |
+| `chap6` | 第六章 | 中心力场 |
+| `chap7` | 第七章 | 微扰论 |
+| `chap8` | 第八章 | 自旋与全同粒子 |
+
+其中第一至第八章归入「第一部分 理论基础」（由 `chap1/chap.tex` 中的 `\part{理论基础}` 开启）。
+
+## 环境要求
+
+- TeX 发行版：推荐 [TeX Live](https://tug.org/texlive/)（完整安装），需要支持中文的 `ctex` 宏集
+- 编译引擎：**XeLaTeX**（文档类为 `ctexbook`，编码 UTF-8）
+- 主要依赖宏包：`amsmath` / `amsthm` / `amssymb`、`tcolorbox`、`physics`、`graphicx`、`fancyhdr`、`geometry`、`hyperref`、`listings`、`stackengine`、`esint`、`yhmath` 等（完整清单见 `config/package.tex`）
+
+## 编译方法
+
+### 整书编译
+
+```bash
+xelatex main.tex
+xelatex main.tex   # 再编译一次以生成正确的目录与交叉引用
 ```
 
-### `config/_config.tex` 配置文件
+输出 `main.pdf`（含封面、前言、目录及全部章节）。
 
-```latex
-% 包以及配置【有需要添加其他包以及配置，添加在 package.tex 文件中】
-\input{\path/package.tex}
+### 单章独立编译
 
-% 定理环境，内置两种定理环境以及中英文版本，可通过修改引入文件改变
-% theorem1.tex 及 theorem1_zh.tex / theorem0.tex 以 theorem0_zh.tex
-\input{\path/theorem1.tex}
+每个 `chapN/chap.tex` 都可以脱离主文件单独编译（正文用 `\ifx\allfiles\undefined` 包裹，单独编译时定义了独立的导言区）：
 
-% 自定义命令【自定义命令，添加在 custom.tex 文件中】
-\input{\path/custom.tex}
-
-% 封面，可选 0 -> 3 四种， 0 为默认封面，无需引入其他文件
-\def\myIndex{0}
-% 不为 0 时，需引入下方的封面配置文件，取消注释即可
-% \input{\path/cover_package_\myIndex.tex}
-
-% ######################## 模板配置信息 ##########################
-
-% #标题
-\def\myTitle{一份 \LaTeX 的笔记模板}
-
-% #作者名称
-\def\myAuthor{Guo}
-
-% #封面页面显示日期
-\def\myDateCover{\today}
-
-% #前言页面显示日期
-\def\myDateForeword{2023 年 1 月 28 日}
-
-% #前言标题
-\def\myForeword{前言}
-
-% 前言内容
-\def\myForewordText{
-    这里写前言内容
-    
-    第二行
-}
-
-% 副标题
-\def\mySubheading{格物致知，慎思明辨}
+```bash
+cd chap3
+xelatex chap.tex
+xelatex chap.tex
 ```
 
-### `config/custom.tex` 自定义命令
+注释或放开 `chapN/chap.tex` 中的 `% \input{../config/cover}` 可控制单章编译时是否带封面。
 
-```latex
-% 微分符号
-\def\d{\mathrm{d}}
+### 在编辑器中编译
 
-% 实数集
-\def\R{\mathbb{R}}
+- **TeXstudio / TeXworks**：将默认编译器设为 XeLaTeX 后直接编译 `main.tex`
+- **VS Code + LaTeX Workshop**：默认 recipe 已含 `xelatex`，直接构建 `main.tex` 即可
 
-% 加粗
-\newcommand{\bs}[1]{\boldsymbol{#1}}
+## 目录结构
 
-% 向量
-\newcommand{\ora}[1]{\overrightarrow{#1}}
-
-% 空行
-\newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}}
-
-% 依赖 \usepackage{stackengine} 调整表格高度
-\newcommand{\xrowht}[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
-
-% 自定义行高的 cases 和 vmatrix 环境
-\newenvironment{ca}[1][1]{\linespread{#1} \selectfont \begin{cases}}{\end{cases}}
-\newenvironment{vx}[1][1]{\linespread{#1} \selectfont \begin{vmatrix}}{\end{vmatrix}}
-
-% 表格内长内容换行
-\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
-
-% 平行符号 //
-\newcommand{\pll}{\kern 0.56em/\kern -0.8em /\kern 0.56em}
-
-% 散度 旋度
-\newcommand{\dive}[1][F]{\mathrm{div}\;\bs{#1}}
-\newcommand{\rotn}[1][A]{\mathrm{rot}\;\bs{#1}}
+```text
+.
+├── main.tex              # 主文件：引入配置、封面与各章节
+├── main.pdf              # 整书编译产物
+├── config/               # 配置目录
+│   ├── _config.tex       # 总配置：串联各配置文件、定义书名/作者/日期/前言
+│   ├── package.tex       # 宏包引入、页面布局、代码高亮、页眉页脚等全局设置
+│   ├── theorem.tex       # 定理/定义/证明等彩色盒子环境（tcolorbox）
+│   ├── custom.tex        # 自定义命令
+│   ├── cover.tex         # 封面 + 前言 + 目录 + 页眉页脚版式
+│   ├── cover_text.tex    # 封面版式（\maketitle 的具体实现）
+│   └── cover_package.jpg # 封面图片
+├── chap0/ … chap8/       # 各章节正文（chap.tex）
+├── figure/               # 全局图片资源
+└── chap1/figure/         # 章内图片资源
 ```
 
-### `chap[number]/chap.tex` 章节文件
+`main.tex` 中通过 `\include` 依次引入章节，注释掉对应行即可只编译部分章节：
 
 ```latex
-\ifx\allfiles\undefined
-\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
-\def\path{../config}
-\input{../config/_config}
-\begin{document}
-% \input{../config/cover}        % 注释与否决定单独编译时，是否编译封面
-\else
-\fi
-%  正文
-%  正文
-%  正文
-\ifx\allfiles\undefined
-\end{document}
-\fi
+\include{chap0/chap} % 数学基础
+\include{chap1/chap}
+\include{chap2/chap}
+% ...
 ```
+
+
+## 致谢
+
+模板来自专栏文章：[一个LaTeX的数学笔记模板](https://zhuanlan.zhihu.com/p/604236564)，在此表示感谢。
